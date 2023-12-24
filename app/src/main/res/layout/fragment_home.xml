@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_background"
+    tools:context=".HomeFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/rl_scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/rl_halfScreen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_home_half_screen">
+
+                <RelativeLayout
+                    android:id="@+id/rl_welcome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="Welcome to EZ Home Services"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_16ssp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_slider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rl_welcome">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_100sdp"
+                        app:cardCornerRadius="@dimen/_10sdp"
+                        android:layout_margin="@dimen/_5sdp">
+
+                        <com.synnapps.carouselview.CarouselView
+                            android:id="@+id/cv_sliderImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerHorizontal="true"
+                            android:scrollIndicators="end"
+                            app:fillColor="@color/white"
+                            app:indicatorGravity="bottom"
+                            app:indicatorOrientation="horizontal"
+                            app:radius="@dimen/_1sdp" />
+                    </androidx.cardview.widget.CardView>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_userDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rl_slider">
+
+                    <TextView
+                        android:id="@+id/tv_hTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="Hi,"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/tv_hTitle"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_toEndOf="@id/tv_hTitle"
+                        android:fontFamily="@font/poppins_bold"
+
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <TextView
+                        android:id="@+id/tv_hGreeting"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_hTitle"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="Greeting"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_12ssp" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_halfScreen"
+                android:layout_margin="@dimen/_10sdp"
+                app:cardBackgroundColor="#7CFFFFFF"
+                app:cardCornerRadius="@dimen/_10sdp">
+
+                <RelativeLayout
+                    android:id="@+id/rl_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:id="@+id/rl_plumbWashLaundry"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/rl_acElecMech">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_plumb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_10sdp"
+                            app:cardBackgroundColor="@color/secondary_color"
+                            app:cardCornerRadius="@dimen/_5sdp">
+
+                            <RelativeLayout
+                                android:id="@+id/rl_plumb"
+                                android:layout_width="@dimen/_75sdp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_2sdp"
+                                android:padding="@dimen/_5sdp">
+
+
+                                <ImageView
+                                    android:id="@+id/iv_plumb"
+                                    android:layout_width="@dimen/_25sdp"
+                                    android:layout_height="@dimen/_25sdp"
+                                    android:src="@drawable/plumber" />
+
+                                <ImageView
+                                    android:id="@+id/iv_arrowPlumber"
+                                    android:layout_width="@dimen/_15sdp"
+                                    android:layout_height="@dimen/_15sdp"
+                                    android:layout_alignParentEnd="true"
+                                    android:src="@drawable/arrow_right" />
+
+                                <TextView
+                                    android:id="@+id/tv_plumber"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/iv_plumb"
+
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:text="Plumber"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_12ssp" />
+
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_wash"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_margin="@dimen/_10sdp"
+                            app:cardBackgroundColor="@color/secondary_color"
+                            app:cardCornerRadius="@dimen/_5sdp">
+
+                            <RelativeLayout
+                                android:id="@+id/rl_wash"
+                                android:layout_width="@dimen/_75sdp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_2sdp"
+                                android:padding="@dimen/_5sdp">
+
+
+                                <ImageView
+                                    android:id="@+id/iv_wash"
+                                    android:layout_width="@dimen/_25sdp"
+                                    android:layout_height="@dimen/_25sdp"
+                                    android:src="@drawable/washing" />
+
+                                <ImageView
+                                    android:id="@+id/iv_arrowWash"
+                                    android:layout_width="@dimen/_15sdp"
+                                    android:layout_height="@dimen/_15sdp"
+                                    android:layout_alignParentEnd="true"
+                                    android:src="@drawable/arrow_right" />
+
+                                <TextView
+                                    android:id="@+id/tv_wash"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/iv_wash"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:text="Washing"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_12ssp" />
+
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_laundry"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_margin="@dimen/_10sdp"
+                            app:cardBackgroundColor="@color/secondary_color"
+                            app:cardCornerRadius="@dimen/_5sdp">
+
+                            <RelativeLayout
+                                android:id="@+id/rl_laundry"
+                                android:layout_width="@dimen/_75sdp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_2sdp"
+                                android:padding="@dimen/_5sdp">
+
+
+                                <ImageView
+                                    android:id="@+id/iv_laundry"
+                                    android:layout_width="@dimen/_25sdp"
+                                    android:layout_height="@dimen/_25sdp"
+                                    android:src="@drawable/mechanic" />
+
+                                <ImageView
+                                    android:id="@+id/iv_arrowLaundry"
+                                    android:layout_width="@dimen/_15sdp"
+                                    android:layout_height="@dimen/_15sdp"
+                                    android:layout_alignParentEnd="true"
+                                    android:src="@drawable/arrow_right" />
+
+                                <TextView
+                                    android:id="@+id/tv_laundry"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/iv_laundry"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:text="Laundry"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_12ssp" />
+
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/rl_acElecMech"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_ac"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_10sdp"
+                            app:cardBackgroundColor="@color/secondary_color"
+                            app:cardCornerRadius="@dimen/_5sdp">
+
+                            <RelativeLayout
+                                android:id="@+id/rl_acRepair"
+                                android:layout_width="@dimen/_75sdp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_2sdp"
+                                android:padding="@dimen/_5sdp">
+
+
+                                <ImageView
+                                    android:id="@+id/iv_ac"
+                                    android:layout_width="@dimen/_25sdp"
+                                    android:layout_height="@dimen/_25sdp"
+                                    android:src="@drawable/ac" />
+
+                                <ImageView
+                                    android:id="@+id/iv_arrowAc"
+                                    android:layout_width="@dimen/_15sdp"
+                                    android:layout_height="@dimen/_15sdp"
+                                    android:layout_alignParentEnd="true"
+                                    android:src="@drawable/arrow_right" />
+
+                                <TextView
+                                    android:id="@+id/tv_ac"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/iv_ac"
+
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:text="Ac Repair"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_12ssp" />
+
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_electrician"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_margin="@dimen/_10sdp"
+                            app:cardBackgroundColor="@color/secondary_color"
+                            app:cardCornerRadius="@dimen/_5sdp">
+
+                            <RelativeLayout
+                                android:id="@+id/rl_electrician"
+                                android:layout_width="@dimen/_75sdp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_2sdp"
+                                android:padding="@dimen/_5sdp">
+
+
+                                <ImageView
+                                    android:id="@+id/iv_electrician"
+                                    android:layout_width="@dimen/_25sdp"
+                                    android:layout_height="@dimen/_25sdp"
+                                    android:src="@drawable/electrician" />
+
+                                <ImageView
+                                    android:id="@+id/iv_arrowElectrician"
+                                    android:layout_width="@dimen/_15sdp"
+                                    android:layout_height="@dimen/_15sdp"
+                                    android:layout_alignParentEnd="true"
+                                    android:src="@drawable/arrow_right" />
+
+                                <TextView
+                                    android:id="@+id/tv_electrician"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/iv_electrician"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:text="Electrician"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_12ssp" />
+
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_mechanic"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_margin="@dimen/_10sdp"
+                            app:cardBackgroundColor="@color/secondary_color"
+                            app:cardCornerRadius="@dimen/_5sdp">
+
+                            <RelativeLayout
+                                android:id="@+id/rl_mechanic"
+                                android:layout_width="@dimen/_75sdp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_2sdp"
+                                android:padding="@dimen/_5sdp">
+
+
+                                <ImageView
+                                    android:id="@+id/iv_mechanic"
+                                    android:layout_width="@dimen/_25sdp"
+                                    android:layout_height="@dimen/_25sdp"
+                                    android:src="@drawable/mechanic" />
+
+                                <ImageView
+                                    android:id="@+id/iv_arrowMechanic"
+                                    android:layout_width="@dimen/_15sdp"
+                                    android:layout_height="@dimen/_15sdp"
+                                    android:layout_alignParentEnd="true"
+                                    android:src="@drawable/arrow_right" />
+
+                                <TextView
+                                    android:id="@+id/tv_mechanic"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/iv_mechanic"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:text="Mechanic"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_12ssp" />
+
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                    </RelativeLayout>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

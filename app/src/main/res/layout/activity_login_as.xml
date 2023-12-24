@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_background"
+    tools:context=".LoginAsA">
+
+    <TextView
+        android:id="@+id/tv_service"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="@dimen/_130sdp"
+        android:background="@drawable/setting_text"
+        android:fontFamily="@font/poppins_semibold"
+        android:gravity="center"
+        android:padding="@dimen/_10sdp"
+        android:text="Service Provider"
+        android:textSize="@dimen/_18ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.291" />
+
+    <TextView
+        android:id="@+id/tv_user"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="@dimen/_130sdp"
+        android:background="@drawable/setting_text"
+        android:fontFamily="@font/poppins_semibold"
+        android:gravity="center"
+        android:padding="@dimen/_10sdp"
+        android:text="User"
+        android:textSize="@dimen/_18ssp"
+        android:layout_marginTop="@dimen/_20sdp"
+        app:layout_constraintEnd_toEndOf="@id/tv_service"
+        app:layout_constraintStart_toStartOf="@id/tv_service"
+        app:layout_constraintTop_toBottomOf="@id/tv_service" />
+</androidx.constraintlayout.widget.ConstraintLayout>

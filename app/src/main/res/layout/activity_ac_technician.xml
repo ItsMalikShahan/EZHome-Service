@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_background"
+    tools:context=".user.AcTechnician">
+
+    <RelativeLayout
+        android:id="@+id/rl_ac"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp">
+
+
+        <TextView
+            android:id="@+id/tv_acTechnician"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+
+            android:fontFamily="@font/poppins_bold"
+            android:text="Ac Technicians"
+            android:textAllCaps="true"
+            android:textSize="@dimen/_16ssp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_noService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/poppins_bold"
+        android:text="No Service Yet"
+        android:textSize="@dimen/_16ssp"
+        android:visibility="gone" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_acTechnician"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rl_ac"
+        android:layout_marginTop="@dimen/_10sdp" />
+
+
+</RelativeLayout>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_background"
+    tools:context=".serviceprovider.CompleteProfileService">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_20sdp">
+
+            <LinearLayout
+                android:id="@+id/ll_signUp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/rl_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/profile_image"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/_50sdp"
+                        android:src="@drawable/logo"
+                        app:civ_border_color="#66000000"
+                        app:civ_border_width="1dp" />
+
+                    <ImageView
+                        android:id="@+id/iv_getImg"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_alignEnd="@id/profile_image"
+                        android:layout_alignBottom="@id/profile_image"
+                        android:src="@drawable/ic_edit2" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Complete your profile"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14ssp" />
+
+                <EditText
+                    android:id="@+id/et_bio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/ic_text_field"
+                    android:fontFamily="@font/poppins_regular"
+                    android:hint="Describe your service"
+                    android:imeOptions="actionNext"
+                    android:maxLength="150"
+                    android:maxLines="2"
+                    android:padding="@dimen/_12sdp"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textColorHint="#B3000000"
+                    android:textSize="@dimen/_12ssp" />
+
+                <EditText
+                    android:id="@+id/et_areaCovered"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/ic_text_field"
+                    android:fontFamily="@font/poppins_regular"
+                    android:hint="Provide detail of Area Covered"
+                    android:imeOptions="actionNext"
+                    android:padding="@dimen/_12sdp"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textColorHint="#B3000000"
+                    android:textSize="@dimen/_12ssp" />
+
+                <EditText
+                    android:id="@+id/et_days"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/ic_text_field"
+                    android:fontFamily="@font/poppins_regular"
+                    android:hint="Mention working days"
+                    android:imeOptions="actionNext"
+                    android:padding="@dimen/_12sdp"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textColorHint="#B3000000"
+                    android:textSize="@dimen/_12ssp" />
+
+                <EditText
+                    android:id="@+id/et_hours"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/ic_text_field"
+                    android:fontFamily="@font/poppins_regular"
+                    android:hint="Mention working hours"
+                    android:imeOptions="actionNext"
+                    android:padding="@dimen/_12sdp"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textColorHint="#B3000000"
+                    android:textSize="@dimen/_12ssp" />
+
+
+                <TextView
+                    android:id="@+id/tv_workPortfolio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/ic_text_field"
+                    android:drawableEnd="@drawable/ic_cloud_upload"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="top|start"
+                    android:hint="Upload Previous Work"
+                    android:padding="@dimen/_12sdp"
+                    android:textColor="@color/black"
+                    android:textColorHint="#B3000000"
+                    android:textSize="@dimen/_12ssp"
+                    tools:ignore="UseCompatTextViewDrawableXml" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_portfolio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:spanCount="3" />
+
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_complete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ll_signUp"
+                android:layout_margin="@dimen/_10sdp"
+                android:background="@drawable/setting_text"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Complete Profile"
+                android:textAllCaps="false" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

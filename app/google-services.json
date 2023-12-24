@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "599811717885",
+    "project_id": "ez-home-service",
+    "storage_bucket": "ez-home-service.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:599811717885:android:17efbddd86f35a07875c94",
+        "android_client_info": {
+          "package_name": "com.example.ezhomeservice"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcD8ir6rH4Fhpb9xkUKlC-_e90P9JiK9k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
