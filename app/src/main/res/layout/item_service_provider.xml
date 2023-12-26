@@ -165,7 +165,7 @@
                     android:id="@+id/btn_msg"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_bold"
+                    android:fontFamily="@font/poppins_semibold"
 
                     android:text="Chat"
                     android:textAllCaps="false" />
@@ -177,7 +177,7 @@
                     android:layout_alignParentEnd="true"
                     android:textColor="@color/white"
                     android:backgroundTint="@color/secondary_color"
-                    android:fontFamily="@font/poppins_bold"
+                    android:fontFamily="@font/poppins_semibold"
                     android:text="Call"
                     android:textAllCaps="false" />
 

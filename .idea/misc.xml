@@ -25,6 +25,7 @@
         <entry key="..\:/Users/abc/AndroidStudioProjects/EZHomeService/app/src/main/res/layout/activity_login_as.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/abc/AndroidStudioProjects/EZHomeService/app/src/main/res/layout/activity_main.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/abc/AndroidStudioProjects/EZHomeService/app/src/main/res/layout/activity_service_home.xml" value="0.12552083333333333" />
+        <entry key="..\:/Users/abc/AndroidStudioProjects/EZHomeService/app/src/main/res/layout/activity_service_loading.xml" value="0.12708333333333333" />
         <entry key="..\:/Users/abc/AndroidStudioProjects/EZHomeService/app/src/main/res/layout/activity_service_provider.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/abc/AndroidStudioProjects/EZHomeService/app/src/main/res/layout/activity_service_provider_profile.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/abc/AndroidStudioProjects/EZHomeService/app/src/main/res/layout/activity_sign_in.xml" value="0.27291666666666664" />
@@ -32,9 +33,15 @@
         <entry key="..\:/Users/abc/AndroidStudioProjects/EZHomeService/app/src/main/res/layout/activity_sign_up.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/abc/AndroidStudioProjects/EZHomeService/app/src/main/res/layout/activity_splash.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/abc/AndroidStudioProjects/EZHomeService/app/src/main/res/layout/contact_us_dialog.xml" value="0.25" />
+        <entry key="..\:/Users/abc/AndroidStudioProjects/EZHomeService/app/src/main/res/layout/fragment_ac_technician.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/abc/AndroidStudioProjects/EZHomeService/app/src/main/res/layout/fragment_dashboard.xml" value="0.33" />
+        <entry key="..\:/Users/abc/AndroidStudioProjects/EZHomeService/app/src/main/res/layout/fragment_electrician.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/abc/AndroidStudioProjects/EZHomeService/app/src/main/res/layout/fragment_home.xml" value="0.33" />
+        <entry key="..\:/Users/abc/AndroidStudioProjects/EZHomeService/app/src/main/res/layout/fragment_laundry.xml" value="0.12552083333333333" />
+        <entry key="..\:/Users/abc/AndroidStudioProjects/EZHomeService/app/src/main/res/layout/fragment_mechanic.xml" value="0.12552083333333333" />
+        <entry key="..\:/Users/abc/AndroidStudioProjects/EZHomeService/app/src/main/res/layout/fragment_plumber.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/abc/AndroidStudioProjects/EZHomeService/app/src/main/res/layout/fragment_setting.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/abc/AndroidStudioProjects/EZHomeService/app/src/main/res/layout/fragment_washing.xml" value="0.12552083333333333" />
         <entry key="..\:/Users/abc/AndroidStudioProjects/EZHomeService/app/src/main/res/layout/item_portfolio.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/abc/AndroidStudioProjects/EZHomeService/app/src/main/res/layout/item_service_provider.xml" value="0.33" />
         <entry key="..\:/Users/abc/AndroidStudioProjects/EZHomeService/app/src/main/res/layout/progress_dialog.xml" value="0.271875" />

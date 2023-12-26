@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.example.ezhomeservice.ForgotPassword;
 import com.example.ezhomeservice.R;
 import com.example.ezhomeservice.Utils;
+import com.example.ezhomeservice.firebase.FirebaseManager;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -79,37 +80,18 @@ public class SignInUser extends AppCompatActivity {
         password = passwordTxt.getText().toString();
         email = emailTxt.getText().toString();
 
-        if (!(isValidEmail(email))){
+        if (!(isValidEmail(email))) {
             emailTxt.setError("Not a valid email");
-        }else if (password.length()<8){
+        } else if (password.length() < 6) {
             passwordTxt.setError("Password is too Short");
-        }else {
-            signIn();
+        } else {
+            FirebaseManager.UserSignIn(email, password, auth, this, HomeUser.class);
         }
-//        if (password.isEmpty() && email.isEmpty()) {
-//            Toast.makeText(this, "Please provide details...", Toast.LENGTH_SHORT).show();
-//        }
 
     }
 
-    private void signIn() {
-        Utils.showLoadingDialog(this, false);
-        auth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            Toast.makeText(SignInUser.this, "Welcome on Board", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(SignInUser.this, HomeUser.class));
-                            finish();
-                            Utils.hideLoadingDialog();
-                        } else {
-                            Toast.makeText(SignInUser.this, "Error " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
-    }
+
     public boolean isValidEmail(CharSequence target) {
         return (target != null && Patterns.EMAIL_ADDRESS.matcher(target).matches());
     }
-    }
+}

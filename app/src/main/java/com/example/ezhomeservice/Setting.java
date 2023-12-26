@@ -26,7 +26,6 @@ public class Setting extends Fragment {
     TextView serviceProvider, contact, share, about, logout;
 
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -91,13 +90,16 @@ public class Setting extends Fragment {
         sendIntent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(new File(filePath)));
         startActivity(Intent.createChooser(sendIntent, "Share app via"));
     }
-    private boolean checkServiceAccount(){
+
+    private boolean checkServiceAccount() {
         return FirebaseAuth.getInstance().getCurrentUser() != null;
     }
-    private void performLogin(){
+
+    private void performLogin() {
         Toast.makeText(getActivity(), "User Exist", Toast.LENGTH_SHORT).show();
     }
-    private void openServiceProviderSignUp(){
+
+    private void openServiceProviderSignUp() {
         Intent startActivity = new Intent(getActivity(), SignUpService.class);
         getParentFragment().getActivity().finish();
         startActivity(startActivity);

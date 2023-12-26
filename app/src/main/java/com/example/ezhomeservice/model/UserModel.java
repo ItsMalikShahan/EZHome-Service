@@ -1,4 +1,4 @@
-package com.example.ezhomeservice;
+package com.example.ezhomeservice.model;
 
 import com.google.firebase.database.IgnoreExtraProperties;
 

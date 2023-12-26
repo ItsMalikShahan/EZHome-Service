@@ -20,7 +20,7 @@ import android.widget.Toast;
 
 import com.example.ezhomeservice.LoginAsA;
 import com.example.ezhomeservice.R;
-import com.example.ezhomeservice.ServiceProviderModel;
+import com.example.ezhomeservice.model.ServiceProviderModel;
 import com.example.ezhomeservice.Utils;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;

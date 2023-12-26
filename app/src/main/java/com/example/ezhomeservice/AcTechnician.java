@@ -1,16 +1,18 @@
-package com.example.ezhomeservice.user;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+package com.example.ezhomeservice;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.util.Log;
 
-import com.example.ezhomeservice.ServiceAdapter;
-import com.example.ezhomeservice.R;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
 import com.example.ezhomeservice.model.ServiceItemModel;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -21,17 +23,19 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AcTechnician extends AppCompatActivity {
+
+public class AcTechnician extends Fragment {
 
     RecyclerView acTechnicians;
     List<ServiceItemModel> list;
     ServiceAdapter acAdapter;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ac_technician);
-        acTechnicians = findViewById(R.id.rv_acTechnician);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.fragment_ac_technician, container, false);
+        acTechnicians = view.findViewById(R.id.rv_acTechnician);
         list = new ArrayList<>();
         Log.d("ACTechnician", "onCreate: is called");
         DatabaseReference serviceProviderRef = FirebaseDatabase.getInstance().getReference()
@@ -45,13 +49,13 @@ public class AcTechnician extends AppCompatActivity {
                 list.clear();
                 for (DataSnapshot snapShot : snapshot.getChildren()) {
                     ServiceItemModel serviceProvider = snapShot.getValue(ServiceItemModel.class);
-                    if (serviceProvider != null){
-                        Log.d("AcTechnician", "onDataChange: "+serviceProvider.getDescription());
-                        Log.d("AcTechnician", "onDataChange: "+serviceProvider.getProfileImgUrl());
-                        Log.d("AcTechnician", "onDataChange: "+serviceProvider.getName());
-                        Log.d("AcTechnician", "onDataChange: "+serviceProvider.getExperience());
-                        Log.d("AcTechnician", "onDataChange: "+serviceProvider.getWorkingDays());
-                        Log.d("AcTechnician", "onDataChange: "+serviceProvider.getWorkingHours());
+                    if (serviceProvider != null) {
+                        Log.d("AcTechnician", "onDataChange: " + serviceProvider.getDescription());
+                        Log.d("AcTechnician", "onDataChange: " + serviceProvider.getProfileImgUrl());
+                        Log.d("AcTechnician", "onDataChange: " + serviceProvider.getName());
+                        Log.d("AcTechnician", "onDataChange: " + serviceProvider.getExperience());
+                        Log.d("AcTechnician", "onDataChange: " + serviceProvider.getWorkingDays());
+                        Log.d("AcTechnician", "onDataChange: " + serviceProvider.getWorkingHours());
 
 
                         list.add(serviceProvider);
@@ -60,8 +64,8 @@ public class AcTechnician extends AppCompatActivity {
                 }
 
 
-                acAdapter = new ServiceAdapter(getApplicationContext(), list);
-                acTechnicians.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                acAdapter = new ServiceAdapter(getContext(), list);
+                acTechnicians.setLayoutManager(new LinearLayoutManager(getContext()));
                 acTechnicians.setAdapter(acAdapter);
                 acAdapter.notifyDataSetChanged();
 
@@ -75,5 +79,6 @@ public class AcTechnician extends AppCompatActivity {
         });
 
 
+        return view;
     }
 }

@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,14 +17,14 @@ import com.example.ezhomeservice.model.ServiceItemModel;
 
 import java.util.List;
 
-public class AcTechnicianAdapter extends RecyclerView.Adapter<AcTechnicianAdapter.ViewHolder> {
+public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ViewHolder> {
 
     Context context;
-    List<ServiceItemModel> acTechnicianList;
+    List<ServiceItemModel> list;
 
-    public AcTechnicianAdapter(Context context, List<ServiceItemModel> acTechnicianList) {
+    public ServiceAdapter(Context context, List<ServiceItemModel> acTechnicianList) {
         this.context = context;
-        this.acTechnicianList = acTechnicianList;
+        this.list = acTechnicianList;
     }
 
     @NonNull
@@ -35,7 +36,7 @@ public class AcTechnicianAdapter extends RecyclerView.Adapter<AcTechnicianAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        ServiceItemModel model = acTechnicianList.get(position);
+        ServiceItemModel model = list.get(position);
         Glide.with(holder.itemView.getContext())
                 .load(model.getProfileImgUrl()).into(holder.profileImg);
         holder.name.setText(model.getName());
@@ -44,11 +45,24 @@ public class AcTechnicianAdapter extends RecyclerView.Adapter<AcTechnicianAdapte
         holder.workingHours.setText(model.getWorkingHours());
         holder.description.setText(model.getDescription());
         holder.areaCovered.setText(model.getAreaCover());
+
+        holder.call.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(context, "will be updated soon", Toast.LENGTH_SHORT).show();
+            }
+        });
+        holder.msg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(context, "will be updated soon", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
-        return acTechnicianList.size();
+        return list.size();
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {

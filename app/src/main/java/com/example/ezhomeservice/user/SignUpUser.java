@@ -17,7 +17,8 @@ import android.widget.Toast;
 
 import com.example.ezhomeservice.LoginAsA;
 import com.example.ezhomeservice.R;
-import com.example.ezhomeservice.UserModel;
+import com.example.ezhomeservice.firebase.FirebaseManager;
+import com.example.ezhomeservice.model.UserModel;
 import com.example.ezhomeservice.Utils;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -37,6 +38,7 @@ public class SignUpUser extends AppCompatActivity {
     FirebaseUser fireUser;
     PasswordView password, confirmPassword;
     private FirebaseAuth auth;
+    private DatabaseReference reference;
     private String passwordTxt, emailTxt, nameTxt, addressTxt;
 
 
@@ -65,7 +67,7 @@ public class SignUpUser extends AppCompatActivity {
         signUp = findViewById(R.id.rl_signUpBtn);
         signIn = findViewById(R.id.tv_signIn);
         auth = FirebaseAuth.getInstance();
-
+        reference = FirebaseDatabase.getInstance().getReference();
 
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -132,39 +134,12 @@ public class SignUpUser extends AppCompatActivity {
         } else if (addressTxt.isEmpty()) {
             address.setError("Address Required");
         } else {
-            registerUser();
+            FirebaseManager.UserSignUp(nameTxt,emailTxt,passwordTxt,addressTxt,
+                    auth, reference,this,HomeUser.class);
+
         }
     }
 
-    private void registerUser() {
-        Utils.showLoadingDialog(this, false);
-        auth.createUserWithEmailAndPassword(emailTxt, passwordTxt)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            String UID = auth.getUid();
-                            DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("EZHomeService")
-                                    .child("Users");
-                            UserModel model = new UserModel(nameTxt, emailTxt, passwordTxt, addressTxt);
-                            databaseReference.child(UID).setValue(model)
-                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                        @Override
-                                        public void onComplete(@NonNull Task<Void> task) {
-                                            Toast.makeText(SignUpUser.this, "Task is done", Toast.LENGTH_SHORT).show();
-                                            startActivity(new Intent(SignUpUser.this, HomeUser.class));
-                                            finish();
-                                            Utils.hideLoadingDialog();
-                                        }
-                                    });
-
-                        } else if (task.isCanceled()) {
-
-                            Toast.makeText(SignUpUser.this, "Task is failed", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
-    }
 
     public boolean isValidEmail(CharSequence target) {
         return (target != null && Patterns.EMAIL_ADDRESS.matcher(target).matches());

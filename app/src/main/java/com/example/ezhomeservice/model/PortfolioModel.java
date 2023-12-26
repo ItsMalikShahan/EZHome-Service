@@ -1,4 +1,4 @@
-package com.example.ezhomeservice;
+package com.example.ezhomeservice.model;
 
 import android.net.Uri;
 

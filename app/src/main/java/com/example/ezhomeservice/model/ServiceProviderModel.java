@@ -1,4 +1,4 @@
-package com.example.ezhomeservice;
+package com.example.ezhomeservice.model;
 
 public class ServiceProviderModel {
     private String name, email, contact, experience, field, password, address,

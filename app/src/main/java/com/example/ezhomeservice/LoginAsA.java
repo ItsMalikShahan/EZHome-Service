@@ -36,7 +36,7 @@ public class LoginAsA extends AppCompatActivity {
         user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.e("TAG", "onClick: user is being called" );
+                Log.e("TAG", "onClick: user is being called");
                 startActivity(new Intent(LoginAsA.this, SignUpUser.class));
                 finish();
             }

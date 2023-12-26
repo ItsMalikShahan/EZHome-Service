@@ -18,6 +18,9 @@
         android:theme="@style/Theme.EZHomeService"
         tools:targetApi="31">
         <activity
+            android:name=".ServiceLoading"
+            android:exported="false" />
+        <activity
             android:name=".user.AcTechnician"
             android:exported="false" />
         <activity

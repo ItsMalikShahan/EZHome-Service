@@ -21,31 +21,34 @@ import com.google.firebase.database.ValueEventListener;
 public class Splash extends AppCompatActivity {
 
     Handler handler;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-            handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
+        handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
 //                    Intent myIntent =new Intent(Splash.this,LoginAsA.class);
 //                    startActivity(myIntent);
 //                    finish();
-                    checkUserStatus();
-                }
-            }, 3000);
+                checkUserStatus();
+            }
+        }, 3000);
     }
-    private void checkUserStatus(){
+
+    private void checkUserStatus() {
         FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-        if (firebaseUser != null){
+        if (firebaseUser != null) {
             isServiceProvider(firebaseUser);
-        }else {
+        } else {
             startActivity(new Intent(Splash.this, LoginAsA.class));
             finish();
         }
     }
-    private void isServiceProvider(FirebaseUser user){
+
+    private void isServiceProvider(FirebaseUser user) {
         String userId = user.getUid();
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("EZHomeService")
                 .child("ServiceProviders").child(userId);
@@ -55,7 +58,7 @@ public class Splash extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {
                     // User is a service provider
-                    Log.e("Splash", "onDataChange: ServiceProvider" );
+                    Log.e("Splash", "onDataChange: ServiceProvider");
                     startActivity(new Intent(Splash.this, CompleteProfileService.class));
                 } else {
                     // User is not a service provider, redirect to user home activity
